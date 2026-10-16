@@ -246,6 +246,86 @@
   .line-badge{display:inline-block;line-height:0}
   .line-badge img{display:block;width:116px;height:36px}
   .line-badge:hover{opacity:.82}
+
+  /* ================= 2026-10-16 やさしい見た目（松岡さん「未経験向けに図とか少し優しさが多い見栄えに。学生向けもそう」） =================
+     赤（ブランド色）は残し、面積を減らして淡い桃色・クリームの背景に寄せる。角丸・余白を大きく、影はうすく。 */
+  :root{--radius:24px;--soft-a:#FFF1EE;--soft-b:#FFF8EC;--soft-c:#EEF6F3;--soft-ink-c:#2E7D68;--soft-d:#F1F0FB;--soft-ink-d:#5B55A8;
+    --shadow:0 1px 2px rgba(60,30,25,.04),0 14px 34px -22px rgba(180,60,40,.22)}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--soft-a:#2A1714;--soft-b:#2A2114;--soft-c:#132621;--soft-ink-c:#7FD3BA;--soft-d:#1D1B33;--soft-ink-d:#AFA9F0}}
+  :root[data-theme="dark"]{--soft-a:#2A1714;--soft-b:#2A2114;--soft-c:#132621;--soft-ink-c:#7FD3BA;--soft-d:#1D1B33;--soft-ink-d:#AFA9F0}
+  :root[data-theme="light"]{--soft-a:#FFF1EE;--soft-b:#FFF8EC;--soft-c:#EEF6F3;--soft-ink-c:#2E7D68;--soft-d:#F1F0FB;--soft-ink-d:#5B55A8}
+  section{padding:88px 0}
+  .btn{border-radius:999px}
+  .btn-primary{box-shadow:0 10px 24px -12px var(--accent)}
+  .band{background:linear-gradient(180deg,var(--soft-a),var(--soft-b));border:0}
+  h2{font-weight:800;line-height:1.45}
+  .sec-head .kick{font-family:var(--sans);letter-spacing:.08em;font-size:.78rem;background:var(--surface);border:1px solid var(--line);
+    align-self:flex-start;padding:5px 14px;border-radius:999px}
+  .sec-head.center .kick{align-self:center}
+  .card,.mcell,.dcell,.stp,details,.moya .m,.traj{border-radius:var(--radius)}
+  .card:hover{transform:translateY(-2px)}
+  .ic-soft{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;margin-bottom:14px;background:var(--accent-tint);color:var(--accent-ink)}
+  .ic-soft.c2{background:var(--soft-b);color:#B5701A}
+  .ic-soft.c3{background:var(--soft-c);color:var(--soft-ink-c)}
+  .ic-soft.c4{background:var(--soft-d);color:var(--soft-ink-d)}
+  .hero-reassure{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+  .hero-reassure span{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:700;color:var(--ink-soft);
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 9px}
+  .hero-reassure svg{width:18px;height:18px;color:var(--soft-ink-c)}
+  .moya .m .c{width:30px;height:30px;border-radius:50%;background:var(--accent-tint);display:grid;place-items:center;font-size:.72rem;margin-top:-2px}
+
+  /* 図: あなた → エージェントベスト → 企業 */
+  .relay{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px;margin:0 0 30px;
+    background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:28px 24px;box-shadow:var(--shadow)}
+  .relay .nd{text-align:center;padding:18px 12px;border-radius:22px}
+  .relay .nd .ico{width:58px;height:58px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;background:var(--surface);box-shadow:0 0 0 6px color-mix(in srgb,currentColor 12%,transparent)}
+  .relay .nd .ico svg{width:28px;height:28px}
+  .relay .nd b{display:block;font-size:1rem;color:var(--ink)}
+  .relay .nd small{display:block;margin-top:4px;font-size:.8rem;color:var(--ink-soft);line-height:1.5}
+  .relay .n1{background:var(--soft-c);color:var(--soft-ink-c)}
+  .relay .n2{background:var(--accent-tint);color:var(--accent-ink)}
+  .relay .n3{background:var(--soft-d);color:var(--soft-ink-d)}
+  .relay .ar{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink-faint);font-size:.74rem;font-weight:700;white-space:nowrap}
+  .relay .ar svg{width:46px;height:20px}
+  @media (max-width:760px){.relay{grid-template-columns:1fr;padding:20px 16px}.relay .ar svg{transform:rotate(90deg);width:34px}.relay .ar{flex-direction:row;justify-content:center}}
+
+  /* 図: 3領域のちがい */
+  .dest{gap:18px}
+  .dcell{padding:0;overflow:hidden;display:flex;flex-direction:column}
+  .dcell .dfig{background:var(--soft-a);padding:18px 18px 8px;display:flex;justify-content:center}
+  .dcell:nth-child(2) .dfig{background:var(--soft-d)}
+  .dcell:nth-child(3) .dfig{background:var(--soft-c)}
+  .dart{width:150px;height:auto;display:block}
+  .dart .a-bg{fill:var(--surface);stroke:var(--line-strong);stroke-width:1.5}
+  .dart .a-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .dart .a-thin{fill:none;stroke:var(--ink-faint);stroke-width:2;stroke-linecap:round}
+  .dart .a-ring{fill:var(--surface);stroke:var(--accent);stroke-width:3}
+  .dart .a-dot{fill:var(--coral)}
+  .dcell .dbody{padding:20px 22px 24px}
+  .dcell dl{margin:14px 0 0;display:grid;gap:10px}
+  .dcell dl div{background:var(--paper);border-radius:14px;padding:10px 14px}
+  .dcell dt{font-size:.72rem;font-weight:800;color:var(--accent-ink);letter-spacing:.04em}
+  .dcell dd{margin:2px 0 0;font-size:.86rem;color:var(--ink-soft);line-height:1.6}
+
+  /* 図: 進め方のステップ（つながった丸） */
+  .steps{position:relative;gap:18px}
+  .steps::before{content:"";position:absolute;left:10%;right:10%;top:34px;height:3px;border-radius:3px;
+    background:repeating-linear-gradient(90deg,var(--accent) 0 10px,transparent 10px 18px);opacity:.45}
+  .stp{text-align:center;padding:0 10px 18px;background:transparent;border:0}
+  .stp .dot{position:relative;width:68px;height:68px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;
+    background:var(--surface);color:var(--accent-ink);border:3px solid var(--accent-tint);box-shadow:var(--shadow)}
+  .stp .dot svg{width:28px;height:28px}
+  .stp .no{display:inline-block;background:var(--accent-tint);border-radius:999px;padding:2px 10px;font-family:var(--sans);font-size:.68rem}
+  .stp:last-child .dot{background:var(--accent);color:#fff;border-color:var(--accent)}
+  @media (max-width:860px){
+    .steps{grid-template-columns:1fr;gap:0;max-width:520px;margin:0 auto}
+    .steps::before{left:33px;right:auto;top:20px;bottom:20px;width:3px;height:auto;
+      background:repeating-linear-gradient(180deg,var(--accent) 0 10px,transparent 10px 18px)}
+    .stp{display:grid;grid-template-columns:68px 1fr;column-gap:16px;text-align:left;padding:0 0 22px}
+    .stp .dot{grid-row:span 3;margin:0}
+    .stp .no{justify-self:start}
+  }
+  .final{border-radius:32px}
 </style>
 
 <style>
@@ -309,6 +389,10 @@
           <span class="chip">選考対策まで伴走</span>
           <span class="chip">学歴フィルターの外へ</span>
         </div>
+        <div class="hero-reassure">
+          <span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l3 3 6-6"/><circle cx="12" cy="12" r="9"/></svg>志望が決まっていなくても大丈夫</span>
+          <span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>相談しても、応募の義務はありません</span>
+        </div>
       </div>
 
       <div class="traj rv" aria-label="成長環境による市場価値の伸びの違い（イメージ）">
@@ -345,15 +429,15 @@
   <!-- PROBLEM -->
   <section class="band" id="moya">
     <div class="wrap">
-      <p class="sec-head kick rv" style="margin-bottom:14px">01 ・ 正直に、問う</p>
+      <p class="sec-head kick rv" style="margin-bottom:14px">01 ・ こんなモヤモヤ、ありませんか</p>
       <p class="prob-q rv">
-        その「安定」、<br><span class="u">ただの"停滞"</span>じゃないか。
+        その「安定」、<br><span class="u">自分で選んでいますか？</span>
       </p>
       <div class="moya">
-        <div class="m rv"><span class="c">01</span><p>大手ナビで<b>数十社に一括エントリー</b>。その他大勢に、静かに埋もれていく。</p></div>
-        <div class="m rv"><span class="c">02</span><p>「とりあえず有名企業」。でも<b>5年後の自分</b>、ちゃんと想像できるか。</p></div>
+        <div class="m rv"><span class="c">01</span><p>大手ナビで<b>数十社に一括エントリー</b>。気づけば、その他大勢に埋もれてしまう。</p></div>
+        <div class="m rv"><span class="c">02</span><p>「とりあえず有名企業」。でも<b>5年後の自分</b>は、まだうまく想像できない。</p></div>
         <div class="m rv"><span class="c">03</span><p>本音で相談できる相手がいない。だから<b>"なんとなく"で決めてしまう</b>。</p></div>
-        <div class="m rv"><span class="c">04</span><p>学歴やガクチカの型じゃなく、<b>ポテンシャルで勝負</b>したい。</p></div>
+        <div class="m rv"><span class="c">04</span><p>学歴やガクチカの型じゃなく、<b>ポテンシャルを見てほしい</b>。</p></div>
       </div>
     </div>
   </section>
@@ -364,13 +448,13 @@
       <div class="sec-head rv">
         <span class="kick">02 ・ なぜ成長環境か</span>
         <h2>伸びる人は、<br>伸びる環境を選んでいる。</h2>
-        <p>大手が悪いわけじゃない。ただ、コンサル・M&amp;A・成長スタートアップには、若手を"別人"に変える理由がある。</p>
+        <p>大手が悪いわけじゃない。ただ、コンサル・M&amp;A・成長スタートアップには、若手のうちから大きく伸びやすい理由があります。</p>
       </div>
       <div class="cards">
-        <div class="card rv"><div class="ic">↗</div><div class="no">REASON 01</div><h3>裁量が、早い</h3><p>若手から事業のど真ん中で、意思決定を任される。任される量が、成長のスピードを決める。同じ2年が、まるで違う。</p></div>
-        <div class="card rv"><div class="ic">◇</div><div class="no">REASON 02</div><h3>市場価値が、上がる</h3><p>事業を動かした経験は、どこへ行っても武器になる。一度身につければ一生モノの、ポータブルなスキル。</p></div>
-        <div class="card rv"><div class="ic">◎</div><div class="no">REASON 03</div><h3>実力で、評価される</h3><p>学歴でも肩書きでもない。ポテンシャルと熱量で見てくれる。挑む人ほど、報われる世界。</p></div>
-        <div class="card rv"><div class="ic">▲</div><div class="no">REASON 04</div><h3>選択肢が、爆発的に増える</h3><p>力さえつければ、次のキャリアは選び放題。ファーストキャリアは"入口"であり、その後すべての"土台"になる。</p></div>
+        <div class="card rv"><div class="ic-soft"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><div class="no">REASON 01</div><h3>裁量が、早い</h3><p>若手から事業のど真ん中で、意思決定を任される。任される量が、成長のスピードを決める。同じ2年でも、経験の厚みが変わります。</p></div>
+        <div class="card rv"><div class="ic-soft c2"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></div><div class="no">REASON 02</div><h3>市場価値が、上がる</h3><p>事業を動かした経験は、どこへ行っても武器になる。一度身につければ一生モノの、ポータブルなスキル。</p></div>
+        <div class="card rv"><div class="ic-soft c3"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><div class="no">REASON 03</div><h3>実力で、評価される</h3><p>学歴でも肩書きでもない。ポテンシャルと熱量で見てくれる。挑戦した分が、きちんと評価に返ってきます。</p></div>
+        <div class="card rv"><div class="ic-soft c4"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M12 17v-4M12 13c0-3-6-3-6-6M12 13c0-3 6-3 6-6"/></svg></div><div class="no">REASON 04</div><h3>選択肢が、大きく広がる</h3><p>力さえつければ、次のキャリアの選択肢が広がります。ファーストキャリアは"入口"であり、その後すべての"土台"になる。</p></div>
       </div>
     </div>
   </section>
@@ -383,10 +467,17 @@
         <h2>あなたを"欲しい"企業へ、<br>まっすぐつなぐ。</h2>
         <p>私たちは、優秀な学生を本気で求めるコンサルファーム・M&amp;A企業・成長スタートアップと取引があります。だから、応募して待つのではなく、あなたに合う一社へこちらから推薦できます。</p>
       </div>
+      <div class="relay rv" role="img" aria-label="あなたとエージェントベストと企業の関係の図">
+        <div class="nd n1"><div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><b>あなた</b><small>いまの気持ちや<br>迷いをそのまま</small></div>
+        <div class="ar"><svg viewBox="0 0 46 20" aria-hidden="true"><path d="M2 10h38M34 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>相談する</div>
+        <div class="nd n2"><div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></div><b>エージェントベスト</b><small>強みの言語化・<br>選考対策を一緒に</small></div>
+        <div class="ar"><svg viewBox="0 0 46 20" aria-hidden="true"><path d="M2 10h38M34 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>推薦する</div>
+        <div class="nd n3"><div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M15 12h.01"/></svg></div><b>企業</b><small>コンサル・M&amp;A・<br>スタートアップ</small></div>
+      </div>
       <div class="match">
-        <div class="mcell rv"><div class="big">◈</div><h3>取引先へ、直接推薦</h3><p>あなたに合う企業へ、私たちから推薦。書類で埋もれず、フェアに見てもらえます。</p></div>
-        <div class="mcell rv"><div class="big">◱</div><h3>非公開・特別選考ルート</h3><p>公開されていない募集や、特別選考のルートをご案内。出会いの母数が変わります。</p></div>
-        <div class="mcell rv"><div class="big">⇄</div><h3>ミスマッチを、事前に防ぐ</h3><p>社風・事業フェーズ・任される役割まで事前にすり合わせ。入ってから後悔しない選択を。</p></div>
+        <div class="mcell rv"><div class="big"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></div><h3>取引先へ、直接推薦</h3><p>あなたに合う企業へ、私たちから推薦。書類で埋もれず、フェアに見てもらえます。</p></div>
+        <div class="mcell rv"><div class="big"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>非公開・特別選考ルート</h3><p>公開されていない募集や、特別選考のルートをご案内。出会いの母数が変わります。</p></div>
+        <div class="mcell rv"><div class="big"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h13l-3-3M17 17H4l3 3"/></svg></div><h3>ミスマッチを、事前に防ぐ</h3><p>社風・事業フェーズ・任される役割まで事前にすり合わせ。入ってから後悔しない選択を。</p></div>
       </div>
     </div>
   </section>
@@ -400,9 +491,12 @@
         <p>若いうちから裁量が大きく、20代で市場価値が伸びる3つの領域に絞ってご紹介します。「スタートアップ＝不安定」ではありません。資金調達済み・急成長中の"伸びている"企業を厳選します。※ 具体的な社名は面談時にご案内します。</p>
       </div>
       <div class="dest">
-        <div class="dcell rv"><span class="tg">CONSULTING</span><h3>コンサルファーム</h3><p>戦略・総合・IT。課題解決と論理思考を徹底的に鍛える。1年目から経営課題の現場に立てる。</p></div>
-        <div class="dcell rv"><span class="tg">M&amp;A</span><h3>M&amp;A</h3><p>仲介・FA・PEなど。企業の一大局面に当事者として関わり、若いうちから数字と交渉の力が身につく。</p></div>
-        <div class="dcell rv"><span class="tg">STARTUP</span><h3>成長スタートアップ</h3><p>上場前・急成長フェーズ。SaaS・テックから新規事業まで、事業を伸ばす最前線で裁量を持って挑戦できる。</p></div>
+        <div class="dcell rv"><div class="dfig"><svg viewBox="0 0 120 84" class="dart" aria-hidden="true"><rect x="10" y="10" width="64" height="48" rx="8" class="a-bg"/><path d="M22 46l12-12 9 8 17-18" class="a-line"/><circle cx="60" cy="24" r="3.5" class="a-dot"/><circle cx="86" cy="52" r="16" class="a-ring"/><path d="M98 64l12 12" class="a-line"/><path d="M80 52h12M86 46v12" class="a-thin"/></svg></div><div class="dbody"><span class="tg">CONSULTING</span><h3>コンサルファーム</h3><p>戦略・総合・IT。企業の課題を整理し、解決策を考えて実行まで支えます。</p>
+          <dl><div><dt>主な仕事</dt><dd>調べる・考える・提案する</dd></div><div><dt>身につく力</dt><dd>論理的に考える力、伝える力</dd></div><div><dt>向いている人</dt><dd>考えることが好き。幅広い業界を見たい</dd></div></dl></div></div>
+        <div class="dcell rv"><div class="dfig"><svg viewBox="0 0 120 84" class="dart" aria-hidden="true"><rect x="10" y="26" width="34" height="44" rx="6" class="a-bg"/><rect x="76" y="18" width="34" height="52" rx="6" class="a-bg"/><path d="M18 38h18M18 48h18M18 58h12M84 30h18M84 40h18M84 50h18M84 60h12" class="a-thin"/><path d="M48 46h24" class="a-line"/><path d="M66 40l6 6-6 6" class="a-line"/><circle cx="60" cy="24" r="9" class="a-ring"/><path d="M56 24l3 3 5-6" class="a-line"/></svg></div><div class="dbody"><span class="tg">M&amp;A</span><h3>M&amp;A</h3><p>仲介・FA・PEなど。会社の買収や事業の引き継ぎに、当事者として関わります。</p>
+          <dl><div><dt>主な仕事</dt><dd>会社を調べる・つなぐ・条件をまとめる</dd></div><div><dt>身につく力</dt><dd>数字を読む力、交渉する力</dd></div><div><dt>向いている人</dt><dd>人と話すのが好き。経営の大きな決断に関わりたい</dd></div></dl></div></div>
+        <div class="dcell rv"><div class="dfig"><svg viewBox="0 0 120 84" class="dart" aria-hidden="true"><path d="M14 72h92" class="a-thin"/><rect x="20" y="56" width="12" height="16" rx="3" class="a-bg"/><rect x="38" y="46" width="12" height="26" rx="3" class="a-bg"/><rect x="56" y="34" width="12" height="38" rx="3" class="a-bg"/><path d="M84 54c0-16 8-30 14-38 6 8 14 22 14 38z" class="a-ring"/><circle cx="98" cy="36" r="4" class="a-dot"/><path d="M90 58l-4 10M106 58l4 10M98 60v10" class="a-line"/></svg></div><div class="dbody"><span class="tg">STARTUP</span><h3>成長スタートアップ</h3><p>上場前・急成長フェーズ。SaaS・テックから新規事業まで、事業を伸ばす現場に立てます。</p>
+          <dl><div><dt>主な仕事</dt><dd>事業をつくる・広げる・仕組みにする</dd></div><div><dt>身につく力</dt><dd>自分で動く力、やり切る力</dd></div><div><dt>向いている人</dt><dd>変化を楽しめる。若いうちから任されたい</dd></div></dl></div></div>
       </div>
       <p class="dest-note rv">※ 上記は領域イメージです。実在の企業名・ロゴは含みません。あなたの志向に合わせて最適な企業をご提案します。</p>
     </div>
@@ -413,7 +507,7 @@
     <div class="wrap">
       <div class="sec-head rv">
         <span class="kick">05 ・ よくある不安</span>
-        <h2>その不安、いったん置いていこう。</h2>
+        <h2>その不安、<br>まずは聞かせてください。</h2>
       </div>
       <div class="faq">
         <details class="rv"><summary><span class="q">Q1</span>スタートアップって、不安定じゃないですか？<span class="chev">▾</span></summary><p class="a">全部がそうではありません。私たちは資金調達済み・急成長中の企業を中心にご紹介し、事業フェーズや財務の実態もお伝えします。「挑戦できる×倒れにくい」バランスの企業を一緒に見極めましょう。</p></details>
@@ -432,13 +526,14 @@
       <div class="sec-head center rv">
         <span class="kick">06 ・ 進め方</span>
         <h2>まずは、話すところから。</h2>
+        <p>はじめての就活でも、ひとつずつ一緒に進めます。</p>
       </div>
       <div class="steps">
-        <div class="stp rv"><div class="no">STEP 01</div><h3>無料相談</h3><p>いまの状況・志向を気軽にお話しください。</p></div>
-        <div class="stp rv"><div class="no">STEP 02</div><h3>自己分析・方向性</h3><p>強みとキャリアの軸を一緒に言語化。</p></div>
-        <div class="stp rv"><div class="no">STEP 03</div><h3>企業紹介・推薦</h3><p>あなたに合う成長企業をご紹介・推薦。</p></div>
-        <div class="stp rv"><div class="no">STEP 04</div><h3>選考対策</h3><p>ES・面接を各社の評価軸に合わせて対策。</p></div>
-        <div class="stp rv"><div class="no">STEP 05</div><h3>内定・入社後</h3><p>意思決定から入社後まで伴走します。</p></div>
+        <div class="stp rv"><div class="dot"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></div><div class="no">STEP 01</div><h3>面談（無料）</h3><p>いまの状況・志向を気軽にお話しください。</p></div>
+        <div class="stp rv"><div class="dot"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><div class="no">STEP 02</div><h3>自己分析・方向性</h3><p>強みとキャリアの軸を一緒に言語化。</p></div>
+        <div class="stp rv"><div class="dot"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><div class="no">STEP 03</div><h3>ES・面接対策</h3><p>各社の評価軸に合わせて、ES・面接を一緒に準備。</p></div>
+        <div class="stp rv"><div class="dot"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></div><div class="no">STEP 04</div><h3>推薦・選考</h3><p>あなたに合う企業へ推薦し、選考中も伴走します。</p></div>
+        <div class="stp rv"><div class="dot"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></div><div class="no">STEP 05</div><h3>内定・入社後</h3><p>意思決定から入社後まで伴走します。</p></div>
       </div>
     </div>
   </section>
@@ -447,7 +542,7 @@
   <section id="entry">
     <div class="wrap">
       <div class="final rv">
-        <h2>動くなら、いま。<br>伸びしろを、解き放て。</h2>
+        <h2>動くなら、いま。<br>伸びしろを、一緒に広げましょう。</h2>
         <p>志望が決まってなくてOK。あなたが一番伸びる場所を、本気で一緒に探します。まずは、話すだけ。</p>
         <a href="https://calendly.com/r_matsuoka" target="_blank" rel="noopener" class="btn btn-lg btn-white">今すぐ、無料で相談する<span class="arw">→</span></a>
           <a class="line-btn" href="https://line.me/R/ti/p/@697nxhbt?oat_content=url&ts=08302134" target="_blank" rel="noopener noreferrer" data-line-cta="student-final"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINEで相談する</span></a>
